@@ -8,9 +8,23 @@
 //     <App />
 //   </StrictMode>,
 // )
+
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import "./index.css";
+// import AppRoutes from "./routes";
+
+// ReactDOM.createRoot(document.getElementById("root")).render(<AppRoutes />);
+
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import AppRoutes from "./routes";
+import App from "./App";
+import { ClerkProvider } from "@clerk/clerk-react";
 
-ReactDOM.createRoot(document.getElementById("root")).render(<AppRoutes />);
+const clerkPubKey = "pk_test_Z2xvcmlvdXMtbWFzdGlmZi0yMS5jbGVyay5hY2NvdW50cy5kZXYk"; 
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <ClerkProvider publishableKey={clerkPubKey}>
+        <App />
+    </ClerkProvider>
+);
