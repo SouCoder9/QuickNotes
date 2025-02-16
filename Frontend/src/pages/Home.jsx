@@ -18,6 +18,22 @@ const Home = () => {
         setNotes([...notes, newNote]);
     };
 
+    // Function to delete a note
+    const deleteNote = (id) => {
+        setNotes(notes.filter((note) => note.id !== id));
+    };
+
+    // Function to edit a note
+    const editNote = (id, updatedTitle, updatedContent) => {
+        setNotes(
+            notes.map((note) =>
+                note.id === id
+                    ? { ...note, title: updatedTitle, content: updatedContent }
+                    : note
+            )
+        );
+    };
+
     return (
         <div className="bg-gray-100 min-h-screen">
             <Navbar />
@@ -35,7 +51,12 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {notes.map((note) => (
-                        <NoteCard key={note.id} note={note} />
+                        <NoteCard
+                            key={note.id}
+                            note={note}
+                            onDelete={deleteNote}
+                            onEdit={editNote}
+                        />
                     ))}
                 </div>
             </div>
