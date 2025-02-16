@@ -19,7 +19,7 @@ const Navbar = () => {
     }, [darkMode]);
 
     return (
-        <nav className="p-4 bg-gray-900 dark:bg-gray-800 text-white flex justify-between items-center shadow-md">
+        <nav className="p-4 bg-gray-900 dark:bg-gray-800 text-white flex justify-between items-center shadow-md border-b border-gray-700">
             <h1 className="text-2xl font-bold tracking-wide">QuickNotes</h1>
             <div className="flex items-center gap-4">
                 {/* Dark Mode Toggle */}
@@ -32,12 +32,12 @@ const Navbar = () => {
 
                 {/* Authentication Buttons */}
                 <SignedIn>
-                    <UserButton />
+                    <UserButton afterSignOutUrl="/login" />
                 </SignedIn>
                 <SignedOut>
                     <Link
                         to="/login"
-                        className="bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg transition"
+                        className="bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg transition shadow-md"
                     >
                         Login
                     </Link>
