@@ -35,7 +35,7 @@ const Home = () => {
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-gray-400 min-h-screen">
             <Navbar />
             <div className="p-6 max-w-4xl mx-auto">
                 <div className="flex justify-between items-center mb-6">

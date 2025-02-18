@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { ClerkProvider } from "@clerk/clerk-react";
+import { NotesProvider } from "./context/NotesContext";
 
-const clerkPubKey = "pk_test_Z2xvcmlvdXMtbWFzdGlmZi0yMS5jbGVyay5hY2NvdW50cy5kZXYk";
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <ClerkProvider publishableKey={clerkPubKey}>
-        <App />
+        <NotesProvider>
+            <App />
+        </NotesProvider>
     </ClerkProvider>
 );

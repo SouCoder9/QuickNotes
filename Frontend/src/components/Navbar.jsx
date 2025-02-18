@@ -25,7 +25,7 @@ const Navbar = () => {
                 {/* Dark Mode Toggle */}
                 <button
                     onClick={() => setDarkMode(!darkMode)}
-                    className="text-white bg-gray-700 dark:bg-gray-600 p-2 rounded-lg transition hover:scale-110"
+                    className="text-white bg-gray-800 dark:bg-gray-600 p-2 rounded-lg transition hover:scale-110"
                 >
                     {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
                 </button>
